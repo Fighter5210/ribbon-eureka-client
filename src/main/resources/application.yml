@@ -1,0 +1,12 @@
+server:
+  port: 8763
+
+eureka:
+  instance:
+    hostname: eureka-client-2
+  client:
+    serviceUrl:
+      defaltZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: eureka-client-2
