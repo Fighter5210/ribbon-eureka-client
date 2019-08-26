@@ -1,4 +1,4 @@
-package com.ws.eureka;
+package com.ws;
 
 
 import org.springframework.boot.SpringApplication;
