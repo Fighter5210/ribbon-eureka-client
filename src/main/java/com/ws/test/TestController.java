@@ -1,6 +1,9 @@
 package com.ws.test;
 
+import org.apache.commons.lang.math.RandomUtils;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Random;
 
 
 /**
@@ -18,10 +21,10 @@ public class TestController {
      * @author:wangdy
      * @Date: 2019/8/22 下午8:58
     */
-    @GetMapping("/names")
-    public String getNames(){
-        String names = "张三、李四、王五、赵六";
-        return names;
+    @GetMapping("/randoms")
+    public String getRandom(){
+        String random = "随机数："+RandomUtils.nextInt();
+        return random;
     }
 
 
