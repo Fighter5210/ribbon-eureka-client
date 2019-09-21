@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 /**
- * @program: eureka-client-1
+ * @program: eureka-client
  * @description:
  * @author: zxb
  * @create: 2019-08-27 12:21
