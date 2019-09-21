@@ -1,6 +1,6 @@
 server:
-  port: 8833
-  context-path: /ribbon-eureka
+  port: 8822
+  context-path: /
 eureka:
   instance:
     hostname: localhost
@@ -16,3 +16,4 @@ spring:
 #ribbon:
 #  eureka:
 #    enabled: false
+    name: eureka-client
