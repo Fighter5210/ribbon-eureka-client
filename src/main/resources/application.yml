@@ -1,6 +1,6 @@
 server:
-  port: 8782
-  context-path: /eureka2
+  port: 8822
+  context-path: /
 eureka:
   instance:
     hostname: localhost
@@ -9,4 +9,4 @@ eureka:
       defaltZone: http://peer1:8761/eureka/
 spring:
   application:
-    name: eureka-client-2
+    name: eureka-client

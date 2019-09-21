@@ -3,7 +3,6 @@ package com.ws.test;
 import org.apache.commons.lang.math.RandomUtils;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Random;
 
 
 /**
@@ -16,15 +15,15 @@ import java.util.Random;
 public class TestController {
 
     /**
-     * @Description: 获取名称
+     * @description:
+     * @param
      * @return:
-     * @author:wangdy
-     * @Date: 2019/8/22 下午8:58
-    */
-    @GetMapping("/randoms")
-    public String getRandom(){
-        String random = "随机数："+RandomUtils.nextInt();
-        return random;
+     * @author:
+     * @Date: 2019/9/19 下午3:00
+     */
+    @GetMapping("/hi")
+    public String hi(){
+        return "eureka-client-2:8822";
     }
 
 
