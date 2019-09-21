@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ws.eureka</groupId>
-    <artifactId>eureka-client-2</artifactId>
+    <artifactId>ribbon-eureka-client</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <packaging>jar</packaging>
-    <name>eureka-client-2</name>
+    <name>ribbon-eureka-client</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -31,6 +31,10 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

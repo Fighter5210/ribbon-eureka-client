@@ -1,9 +1,11 @@
 package com.ws.test;
 
-import org.apache.commons.lang.math.RandomUtils;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
-import java.util.Random;
+import javax.annotation.Resource;
 
 
 /**
@@ -15,16 +17,47 @@ import java.util.Random;
 @RequestMapping(value = "/test")
 public class TestController {
 
+    @Resource
+    private LoadBalancerClient loadBalancer;
+
+    @Resource
+    RestTemplate restTemplate;
+
+    @Resource
+    TestService restService;
+
     /**
-     * @Description: 获取名称
+     * @description:hi
+     * @return:
+     * @author:
+     * @Date: 2019/9/21 下午3:27
+    */
+    @GetMapping("/testRibbon")
+    public String testRibbon(){
+        String data = restTemplate.getForObject("http://eureka-client/test/hi",String.class);
+        return data;
+    }
+    /**
+     * @Description: hi
      * @return:
      * @author:wangdy
-     * @Date: 2019/8/22 下午8:58
+     * @Date: 2019/9/21 下午3:27
     */
-    @GetMapping("/randoms")
-    public String getRandom(){
-        String random = "随机数："+RandomUtils.nextInt();
-        return random;
+    @GetMapping("/testRibbon2")
+    public String testRibbon2(){
+        ServiceInstance instance = loadBalancer.choose("eureka-client");
+        return instance.getHost()+":"+instance.getPort();
+    }
+    /**
+     * @Description: hi
+     * @return:
+     * @author:wangdy
+     * @Date: 2019/9/21 下午3:27
+    */
+    @GetMapping("/testRibbon3")
+    public String testRibbon3(){
+        String hi = restService.hi();
+        return hi;
     }
 
 
